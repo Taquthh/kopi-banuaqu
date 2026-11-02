@@ -1,5 +1,5 @@
 /* Kopi Banua - script.js */
-const NOMOR_WA = "628115000000";
+const NOMOR_WA = "6285117278458";
 const MENU = [
   {
     id: "kopi-susu",
