@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kopi Banua - Kopi Robusta Asli Kalimantan Selatan</title>
+    <meta
+      name="description"
+      content="Kopi Banua, kedai kopi rumahan di Handil Bakti, Barito Kuala. Robusta lokal disangrai setiap pagi. Lihat menu, jam buka, dan pesan online."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="progres-baca" id="progres"></div>
+    <header class="header-situs">
+      <a class="logo" href="#atas"
+        ><span class="logo-ikon">&#9749;</span> Kopi Banua</a
+      >
+      <nav id="navigasi" aria-label="Navigasi utama">
+        <ul>
+          <li><a href="#tentang">Tentang</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#jam">Jam Buka</a></li>
+          <li><a href="#galeri">Galeri</a></li>
+          <li><a href="#testimoni">Testimoni</a></li>
+          <li><a href="#pesan">Pesan</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+      </nav>
+      <div class="aksi-header">
+        <button
+          type="button"
+          class="tombol-ikon"
+          id="tombol-tema"
+          aria-label="Ganti tema gelap atau terang"
+        >
+          &#127769;
+        </button>
+        <button
+          type="button"
+          class="tombol-ikon tombol-keranjang"
+          id="buka-keranjang"
+          aria-label="Buka keranjang"
+        >
+          &#128722;<span class="lencana" id="jumlah-keranjang">0</span>
+        </button>
+        <button
+          type="button"
+          class="tombol-ikon tombol-menu"
+          id="tombol-menu"
+          aria-label="Buka menu navigasi"
+          aria-expanded="false"
+        >
+          &#9776;
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="atas">
+        <div class="hero-teks">
+          <p class="status-buka" id="status-buka">Memeriksa jam buka...</p>
+          <h1>Kopi Banua</h1>
+          <p class="tagline">
+            <strong>Kopi Robusta Asli Kalimantan Selatan</strong>,
+            <span id="ketik"></span><span class="kursor">|</span>
+          </p>
+          <div class="grup-tombol">
+            <a class="tombol tombol-utama" href="#menu">Lihat Menu</a>
+            <a class="tombol tombol-garis" href="#pesan">Pesan Sekarang</a>
+          </div>
+        </div>
+        <div class="hero-foto">
+          <img
+            src="img/kedai.jpg"
+            alt="Suasana kedai Kopi Banua di tepi sungai saat matahari terbenam"
+            width="600"
+            height="327"
+          />
+        </div>
+      </section>
+
+      <section id="tentang">
+        <h2>Tentang Kami</h2>
+        <p>
+          Kopi Banua adalah kedai kopi rumahan yang berdiri sejak 2021 di
+          kawasan Handil Bakti, Barito Kuala. Kami memakai biji robusta dari
+          petani Pengaron dan menyangrainya sendiri setiap pagi.
+        </p>
+        <div class="statistik">
+          <div class="kartu-statistik">
+            <strong class="angka" data-target="2021" data-format="tahun"
+              >0</strong
+            ><span>Berdiri sejak</span>
+          </div>
+          <div class="kartu-statistik">
+            <strong class="angka" data-target="6">0</strong
+            ><span>Menu favorit</span>
+          </div>
+          <div class="kartu-statistik">
+            <strong class="angka" data-target="1200">0</strong
+            ><span>Pelanggan puas</span>
+          </div>
+          <div class="kartu-statistik">
+            <strong class="angka" data-target="100">0</strong
+            ><span>Persen biji lokal</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="menu">
+        <h2>Menu Favorit</h2>
+        <div class="alat-menu">
+          <label class="sembunyi" for="cari-menu">Cari menu</label>
+          <input
+            type="search"
+            id="cari-menu"
+            placeholder="Cari menu, contoh: kopi susu"
+          />
+          <div
+            class="filter"
+            id="filter"
+            role="group"
+            aria-label="Filter kategori"
+          >
+            <button type="button" class="chip aktif" data-kategori="semua">
+              Semua
+            </button>
+            <button type="button" class="chip" data-kategori="kopi">
+              Kopi
+            </button>
+            <button type="button" class="chip" data-kategori="non-kopi">
+              Non-kopi
+            </button>
+            <button type="button" class="chip" data-kategori="makanan">
+              Makanan
+            </button>
+          </div>
+        </div>
+        <div class="grid-menu" id="grid-menu"></div>
+        <p class="kosong" id="menu-kosong" hidden>
+          Menu yang dicari tidak ditemukan.
+        </p>
+      </section>
+
+      <section id="jam">
+        <h2>Jam Buka</h2>
+        <table>
+          <caption>
+            Jam operasional Kopi Banua (WITA)
+          </caption>
+          <thead>
+            <tr>
+              <th>Hari</th>
+              <th>Buka</th>
+              <th>Tutup</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-hari="1,2,3,4,5">
+              <td>Senin - Jumat</td>
+              <td>08.00</td>
+              <td>22.00</td>
+            </tr>
+            <tr data-hari="6,0">
+              <td>Sabtu - Minggu</td>
+              <td>09.00</td>
+              <td>23.00</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="jam-sekarang" id="jam-sekarang"></p>
+      </section>
+
+      <section id="galeri">
+        <h2>Galeri</h2>
+        <div class="grid-galeri">
+          <figure>
+            <img
+              src="img/kopi-susu.jpg"
+              alt="Segelas kopi susu khas Banua di atas meja kayu"
+              loading="lazy"
+              width="300"
+            />
+            <figcaption>Kopi Susu Khas Banua</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="img/kedai.jpg"
+              alt="Suasana kedai pada sore hari di tepi sungai"
+              loading="lazy"
+              width="300"
+            />
+            <figcaption>Kedai kami saat sore hari</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="img/biji-kopi.jpg"
+              alt="Biji robusta yang baru disangrai dan masih beruap"
+              loading="lazy"
+              width="300"
+            />
+            <figcaption>Biji robusta baru disangrai</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="img/roti-bakar-srikaya.jpg"
+              alt="Roti bakar srikaya dengan telur setengah matang dan kopi"
+              loading="lazy"
+              width="300"
+            />
+            <figcaption>Roti bakar srikaya</figcaption>
+          </figure>
+        </div>
+        <h3>Proses Sangrai</h3>
+        <video
+          src="img/proses-sangrai.mp4"
+          controls
+          preload="metadata"
+          width="640"
+        ></video>
+      </section>
+
+      <section id="testimoni">
+        <h2>Kata Pelanggan</h2>
+        <div class="slider" id="slider">
+          <article class="testimoni aktif">
+            <blockquote>
+              <p>
+                Kopi tubruknya mantap, pahitnya pas dan harum sekali. Jadi
+                langganan tiap pagi.
+              </p>
+            </blockquote>
+            <cite>Rina, Handil Bakti</cite>
+          </article>
+          <article class="testimoni">
+            <blockquote>
+              <p>
+                Kopi susunya tidak terlalu manis. Tempatnya nyaman buat nugas
+                sampai malam.
+              </p>
+            </blockquote>
+            <cite>Fajar, Mahasiswa</cite>
+          </article>
+          <article class="testimoni">
+            <blockquote>
+              <p>
+                Roti bakar srikayanya lembut, cocok dipasangkan dengan teh
+                tarik.
+              </p>
+            </blockquote>
+            <cite>Bu Sari, Barito Kuala</cite>
+          </article>
+          <div class="kontrol-slider">
+            <button
+              type="button"
+              class="tombol-ikon"
+              id="sebelumnya"
+              aria-label="Testimoni sebelumnya"
+            >
+              &#8592;
+            </button>
+            <div class="titik" id="titik"></div>
+            <button
+              type="button"
+              class="tombol-ikon"
+              id="berikutnya"
+              aria-label="Testimoni berikutnya"
+            >
+              &#8594;
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="pesan">
+        <h2>Pesan Sekarang</h2>
+        <div class="kolom-pesan">
+          <form id="form-pesan" action="#" method="post" novalidate>
+            <fieldset>
+              <legend>Data pemesan</legend>
+              <label for="nama">Nama lengkap</label>
+              <input
+                type="text"
+                id="nama"
+                name="nama"
+                required
+                minlength="3"
+                placeholder="Nama Anda"
+                autocomplete="name"
+              />
+              <p class="galat" data-untuk="nama"></p>
+              <label for="wa">Nomor WhatsApp</label>
+              <input
+                type="tel"
+                id="wa"
+                name="wa"
+                required
+                pattern="08[0-9]{8,11}"
+                placeholder="08****"
+                autocomplete="tel"
+              />
+              <p class="galat" data-untuk="wa"></p>
+            </fieldset>
+            <fieldset>
+              <legend>Pesanan</legend>
+              <label for="menu-pilih">Pilih menu</label>
+              <select id="menu-pilih" name="menu" required>
+                <option value="">-- pilih salah satu --</option>
+              </select>
+              <p class="galat" data-untuk="menu-pilih"></p>
+              <label for="jumlah">Jumlah</label>
+              <input
+                type="number"
+                id="jumlah"
+                name="jumlah"
+                min="1"
+                max="20"
+                value="1"
+              />
+              <p class="teks-kecil">Topping tambahan</p>
+              <div class="opsi">
+                <label class="opsi-item"
+                  ><input
+                    type="checkbox"
+                    name="topping"
+                    value="3000"
+                    data-nama="Boba"
+                  />
+                  Boba (+Rp 3.000)</label
+                >
+                <label class="opsi-item"
+                  ><input
+                    type="checkbox"
+                    name="topping"
+                    value="2000"
+                    data-nama="Es batu"
+                  />
+                  Es batu (+Rp 2.000)</label
+                >
+                <label class="opsi-item"
+                  ><input
+                    type="checkbox"
+                    name="topping"
+                    value="4000"
+                    data-nama="Extra shot"
+                  />
+                  Extra shot (+Rp 4.000)</label
+                >
+              </div>
+              <p class="teks-kecil">Cara ambil</p>
+              <div class="opsi">
+                <label class="opsi-item"
+                  ><input
+                    type="radio"
+                    name="ambil"
+                    value="Ambil di kedai"
+                    checked
+                  />
+                  Ambil di kedai</label
+                >
+                <label class="opsi-item"
+                  ><input type="radio" name="ambil" value="Diantar" />
+                  Diantar</label
+                >
+              </div>
+              <label for="catatan">Catatan</label>
+              <textarea
+                id="catatan"
+                name="catatan"
+                rows="3"
+                maxlength="200"
+              ></textarea>
+              <p class="teks-kecil">
+                <span id="hitung-catatan">0</span>/200 karakter
+              </p>
+            </fieldset>
+            <button type="submit" class="tombol tombol-utama">
+              Kirim via WhatsApp
+            </button>
+          </form>
+          <aside class="promo">
+            <h3>Promo Hari Ini</h3>
+            <p>Beli 2 Kopi Susu Gula Aren, gratis 1 Teh Tarik.</p>
+            <p class="harga-total">
+              Estimasi: <strong id="estimasi">Rp 0</strong>
+            </p>
+            <p class="teks-kecil">Promo berlaku selama persediaan ada.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section id="kontak">
+        <h2>Hubungi Kami</h2>
+        <ul class="daftar-kontak">
+          <li>
+            WhatsApp: <a href="https://wa.me/6285117278458">0851-1727-8458</a>
+          </li>
+          <li>
+            Surel:
+            <a href="mailto:halo@kopibanua.co.id">halo@kopibanua.co.id</a>
+          </li>
+          <li>
+            Alamat: Komplek Griya Annisah, Handil Bakti, Barito Kuala,
+            Kalimantan Selatan
+          </li>
+        </ul>
+        <iframe
+          class="peta"
+          src="https://www.google.com/maps?q=-3.2800412997268564,114.60094842796839&amp;z=17&amp;output=embed"
+          width="100%"
+          height="320"
+          loading="lazy"
+          title="Peta lokasi Kopi Banua di Komplek Griya Annisah, Handil Bakti"
+        ></iframe>
+        <p>
+          <a
+            class="tombol tombol-garis"
+            href="https://www.google.com/maps/search/?api=1&amp;query=Komplek+Griya+Annisah+Handil+Bakti+Barito+Kuala"
+            target="_blank"
+            rel="noopener"
+            >Buka rute di Google Maps</a
+          >
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <div>
+        <h3>Kopi Banua</h3>
+        <p>Kopi robusta asli Kalimantan Selatan, disangrai setiap pagi.</p>
+      </div>
+      <div>
+        <h3>Tautan Cepat</h3>
+        <ul>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#pesan">Pesan</a></li>
+          <li><a href="#atas">Kembali ke atas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Kontak</h3>
+        <p>Komplek Griya Annisah, Handil Bakti, Barito Kuala</p>
+        <p>&copy; 2026 Kopi Banua. Tugas Pemrograman Web 1.</p>
+      </div>
+    </footer>
+
+    <aside
+      class="panel-keranjang"
+      id="panel-keranjang"
+      aria-label="Keranjang belanja"
+      aria-hidden="true"
+    >
+      <div class="kepala-panel">
+        <h3>Keranjang</h3>
+        <button
+          type="button"
+          class="tombol-ikon"
+          id="tutup-keranjang"
+          aria-label="Tutup keranjang"
+        >
+          &#10005;
+        </button>
+      </div>
+      <ul id="isi-keranjang"></ul>
+      <p class="harga-total">
+        Total: <strong id="total-keranjang">Rp 0</strong>
+      </p>
+      <button type="button" class="tombol tombol-utama" id="checkout">
+        Pesan Lewat WhatsApp
+      </button>
+      <button type="button" class="tombol tombol-garis" id="kosongkan">
+        Kosongkan
+      </button>
+    </aside>
+    <div class="tirai" id="tirai" hidden></div>
+    <div class="lightbox" id="lightbox" hidden>
+      <button
+        type="button"
+        class="tombol-ikon"
+        id="tutup-lightbox"
+        aria-label="Tutup gambar"
+      >
+        &#10005;</button
+      ><img
+        id="gambar-besar"
+        src="img/kedai.jpg"
+        alt="Gambar galeri diperbesar"
+      />
+    </div>
+    <div class="toast" id="toast" role="status"></div>
+    <a
+      class="wa-mengambang"
+      href="https://wa.me/6285117278458"
+      target="_blank"
+      rel="noopener"
+      aria-label="Chat WhatsApp"
+      >WA</a
+    >
+    <button
+      type="button"
+      class="ke-atas"
+      id="ke-atas"
+      aria-label="Kembali ke atas"
+      hidden
+    >
+      &#8593;
+    </button>
+    <script src="js/script.js"></script>
+  </body>
+</html>
