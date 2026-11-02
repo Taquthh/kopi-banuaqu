@@ -3,7 +3,7 @@
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:6F4E37,100:C68B59&height=200&section=header&text=Kopi%20Banua&fontSize=60&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Landing%20Page%20UMKM%20Kopi%20Khas%20Banua&descAlignY=60&descSize=18" alt="Banner Kopi Banua" />
 
 <a href="https://kopi-banuaqu.vercel.app/">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=3000&pause=1000&color=C68B59&center=true&vCenter=true&width=600&lines=☕+Seduh+kehangatan+khas+Banua;🛒+Pesan+langsung+lewat+WhatsApp;🌙+Mode+gelap+%26+terang;📍+Handil+Bakti%2C+Barito+Kuala" alt="Typing SVG" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=3000&pause=1000&color=C68B59&center=true&vCenter=true&width=500&height=40&repeat=true&lines=Seduh+kehangatan+khas+Banua;Pesan+langsung+lewat+WhatsApp;Mode+gelap+dan+terang;Handil+Bakti%2C+Barito+Kuala" alt="Kopi Banua - Seduh kehangatan khas Banua" />
 </a>
 
 <br/>
