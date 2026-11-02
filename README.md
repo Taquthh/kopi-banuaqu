@@ -10,7 +10,7 @@ Tugas 1 Pemrograman Web 1 - S1 Sistem Informasi FTI UNISKA MAB
 
 -Github : https://github.com/Taquthh/kopi-banuaqu
 
--Web :
+-Web :https://kopi-banuaqu.vercel.app/
 
 ## Fitur
 
